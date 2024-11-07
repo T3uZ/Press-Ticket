@@ -8,14 +8,14 @@ import {
   Paper,
   Switch,
   Tab,
-  Tabs
+  Tabs,
 } from "@material-ui/core";
 
 import {
   AllInboxRounded,
   HourglassEmptyRounded,
   MoveToInbox,
-  Search
+  Search,
 } from "@material-ui/icons";
 
 import { Can } from "../Can";
@@ -123,11 +123,10 @@ const TicketsManager = () => {
       setShowAllTickets(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   const handleSearch = (e) => {
     const searchedTerm = e.target.value.toLowerCase();
-
 
     setSearchParam(searchedTerm);
     if (searchedTerm === "") {
@@ -135,7 +134,6 @@ const TicketsManager = () => {
     } else if (tab !== "search") {
       setTab("search");
     }
-
   };
 
   const handleChangeTab = (e, newValue) => {
@@ -221,26 +219,18 @@ const TicketsManager = () => {
         >
           {i18n.t("ticketsManager.buttons.newTicket")}
         </Button>
-        <Can
-          role={user.profile}
-          perform="tickets-manager:showall"
-          yes={() => (
-            <FormControlLabel
-              label={i18n.t("tickets.buttons.showAll")}
-              labelPlacement="start"
-              control={
-                <Switch
-                  size="small"
-                  checked={showAllTickets}
-                  onChange={() =>
-                    setShowAllTickets((prevState) => !prevState)
-                  }
-                  name="showAllTickets"
-                  color="primary"
-                />
-              }
+        <FormControlLabel
+          label={i18n.t("tickets.buttons.showAll")}
+          labelPlacement="start"
+          control={
+            <Switch
+              size="small"
+              checked={showAllTickets}
+              onChange={() => setShowAllTickets((prevState) => !prevState)}
+              name="showAllTickets"
+              color="primary"
             />
-          )}
+          }
         />
         <TicketsQueueSelect
           style={{ marginLeft: 6 }}
