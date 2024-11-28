@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Documentação da API do Press Ticket",
+    "title": "Documentação da API do MTALK",
     "description": "Documentação da API para envio de mensagens e mídia.",
     "contact": {
       "email": "robson.tenorio@gmail.com"
@@ -10,8 +10,8 @@
   },
   "servers": [
     {
-      "url": "https://apiback.pressticket.com.br",
-      "description": "API Press Ticket"
+      "url": "https://mixapi.mtalk.com.br",
+      "description": "API MTALK"
     }
   ],
   "paths": {
